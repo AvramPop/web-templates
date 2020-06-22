@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="../jquery-2.0.3.js"></script>
+
+    <script language="javascript">
+        function winner() {
+          let gameWinner = 0;
+          $("tbody").children().each(function(index, el) {
+            let value = $(el).children().first().html();
+            let count = 0;
+            $(el).children().each(function(secondIndex, secondElement) {
+              if($(secondElement).html() === value) count++;
+            });
+            if(count == 3) {
+              gameWinner = value;
+              return false;
+            }
+          });
+          for(let i = 0; i <= 2; i++) {
+            let value = $("tbody").children().first().children().eq(i).html();
+            let count = 0;
+            $("tbody").children().each(function(index, el) {
+              if($(el).children().eq(i).html() === value) count++;
+            });
+            if(count == 3) {
+              gameWinner = value;
+              i = 100;
+            }
+          }
+          console.log($("tbody").children().first().children().eq(2).html());
+          console.log($("tbody").children().eq(1).children().eq(1).html());
+          console.log($("tbody").children().eq(2).children().eq(0).html());
+          if ($("tbody").children().first().children().eq(0).html() == $("tbody").children().eq(1).children().eq(1).html() &&
+                $("tbody").children().first().children().eq(0).html() == $("tbody").children().eq(2).children().eq(2).html()) return $("tbody").children().first().children().eq(0).html();
+          if ($("tbody").children().first().children().eq(2).html() == $("tbody").children().eq(1).children().eq(1).html() &&
+                $("tbody").children().first().children().eq(2).html() == $("tbody").children().eq(2).children().eq(0).html()) return $("tbody").children().first().children().eq(2).html();
+          return gameWinner;
+        }
+
+        $(function () {
+          let current = "x";
+          $("table").css("border-collapse", "collapse");
+          $("table, th, td").css("border", "1px solid black");
+          $("td").css("width", "30px");
+          $("td").css("height", "30px");
+          $("td").hover(e => $(e.target).css("background-color", "red"), e => $(e.target).css("background-color", "white"));
+          $("td").click(function() {
+              if($(this).html() === "") {
+                  $(this).html(current);
+                  current = current === "x" ? "0" : "x";
+              }
+              if(winner()) {
+                $("#bio").html("winner: " + winner());
+                $("tbody").children().each(function(index, el) {
+                  $(el).children().each(function(secondIndex, secondElement) {
+                    $(secondElement).off("click");
+                  });
+                });
+              }
+            });
+          });
+    </script>
+</head>
+<body>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <section id="bio">
+        </section>
+</body>
+</html>
