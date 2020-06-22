@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="../jquery-2.0.3.js"></script>
+
+    <script language="javascript">
+        $(function() {
+          let original = $("#bio").html();
+          $(document).dblclick(function () {
+            let text = window.getSelection().toString();
+            let splitText = original.split(" ");
+            let content = "";
+            for(let word of splitText) {
+              if(word === text) word = "<b>" + word + "</b>";
+              content += word + " ";
+            }
+            $("#bio").html(content);
+          });
+        })
+
+
+    </script>
+</head>
+<body>
+
+        <section id="bio">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu blandit augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed consequat ligula. Nullam arcu nulla, aliquet et nisl vel, accumsan pretium purus. Mauris ut tellus aliquam, porta mi eget, porttitor tortor. Aliquam erat volutpat. Aliquam fringilla interdum purus, ut eleifend enim efficitur ac. Nullam nulla odio, ornare non ipsum sed, interdum elementum augue. Nam orci est, consectetur eget dolor ut, maximus tempor neque. Fusce vestibulum et diam ut gravida. Duis malesuada velit felis, vel aliquam ligula luctus in. Fusce tristique ultricies diam ac egestas.
+
+Cras convallis, justo sit amet interdum tempus, arcu magna dictum elit, eget sollicitudin mauris lectus sit amet nisi. Donec sagittis facilisis consequat. Nulla sagittis ipsum eu pulvinar hendrerit. Etiam et aliquam est, sit amet suscipit arcu. Nulla non sagittis purus. Praesent et odio vel nisi commodo vestibulum quis eu dui. In cursus orci mauris, non dapibus lectus pretium vel. Sed aliquet augue a nibh dignissim efficitur. Integer posuere interdum ex, faucibus sagittis lacus dignissim sed. Nam vitae nisi leo. Duis hendrerit, nisl quis maximus luctus, nisl nibh congue lectus, sit amet rhoncus metus justo vel nibh.
+
+In rutrum ex ut enim vehicula mollis. Quisque eros leo, facilisis ut lorem in, dignissim consectetur nibh. Donec consequat tempus erat, sed molestie erat fringilla vel. Aliquam id faucibus ipsum. Donec facilisis pretium sapien, id ultricies arcu posuere in. Quisque pharetra velit sit amet sem volutpat, vitae commodo nisi faucibus. Pellentesque suscipit nibh ut blandit ultricies. Donec vel interdum dolor. Nulla tempus, sapien id condimentum vestibulum, quam magna euismod metus, at dignissim est lorem et orci.
+
+In et blandit nulla, eu convallis lorem. Aenean vel diam non velit congue posuere. Morbi hendrerit molestie est, id consectetur diam interdum quis. Proin iaculis quis ante non mollis. Cras in mauris justo. Quisque commodo rutrum felis. Morbi pretium nulla vel sem bibendum semper. Donec felis quam, laoreet et lectus cursus, condimentum commodo orci.
+
+Duis placerat cursus nibh, et hendrerit nibh elementum vitae. Aliquam accumsan diam dignissim mollis molestie. Suspendisse vitae blandit erat. Duis nibh elit, faucibus nec congue ac, scelerisque ut lorem. In rutrum sapien rhoncus urna porta euismod. Maecenas pulvinar in ex posuere porttitor. Vestibulum sit amet leo congue, elementum ligula sed, mollis risus. Vestibulum suscipit ligula a ante molestie mattis. Vivamus fermentum condimentum lectus, eget egestas enim laoreet ac. Fusce eu pellentesque nisl, sed tristique lectus.
+        </section>
+</body>
+</html>
