@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\DaniController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DataAbstractionLayer\DB.cs" />
@@ -203,6 +204,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Catalog\ViewCatalog.cshtml" />
     <Content Include="Views\Login\ViewLogin.cshtml" />
+    <Content Include="Views\Dani\ViewDani.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

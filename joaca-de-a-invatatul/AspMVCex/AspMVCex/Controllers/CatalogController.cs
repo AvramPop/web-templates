@@ -38,10 +38,6 @@ namespace AspMVCex.Controllers
                 db.SaveAsset(asset);
             }
             return Json(new { });
-            //int userId = int.Parse(Request.Params["userId"]);
-            //DB db = new DB();
-            //List<Asset> assetsList = db.GetAllAssetsOfUser(userId);
-            //return Json(new { assets = assetsList }, JsonRequestBehavior.AllowGet);
         }
 
     }
